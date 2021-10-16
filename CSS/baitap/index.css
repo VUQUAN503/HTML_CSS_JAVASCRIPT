@@ -1,0 +1,46 @@
+
+
+
+div.main{
+    text-align: center;
+    margin-top: 200px;
+}
+
+div.main button.one{
+    padding: 15px 0;
+    min-width: 180px; /*đọ rổng tối thiểu*/
+    background-color: aqua;
+    color: #ccc;
+    font-size: 20px;/*kích thước chữ*/
+    border: none;/*đường viền*/
+}
+
+div.main h3.two{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+div.main h3.two span{
+    color: aqua;
+    font-weight: 600;
+}
+
+div.main p.three{
+    opacity: 0.8;
+}
+
+/*Lấy tất cả thẻ button nằm trong thẻ div có class là button*/
+div.main div.button button{
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    /* min-width: 150px; */
+    border: none;
+    border-radius: 3px;
+    opacity: .8;
+}
+
+div.main div.button :first-child{
+    margin-right: 10px;
+}
