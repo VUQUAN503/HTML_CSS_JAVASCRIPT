@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       /*
+       position(left, right, top, bottom, z-index):
+        + relative: phụ thuộc vào chính vị trí của nó
+        + absolute: phụ thuộc vào thằng cha có thuộc position khác mặc định(static)
+        + fixed: phụ thuộc vào vị trí của trình duyệt
+       */
+       .header{
+           width: 100%;
+           height: 200px;
+           background-color: yellow;
+           position: fixed;
+           top: 300px;
+           left: 0;
+           z-index: 1000;
+       }
+       .main{
+           width: 500px;
+           height: 2000px;
+           background-color: aqua;
+           position: relative;
+           /* top: 200px; */
+           /* margin-top: 200px; */
+           /*left: 200px */
+       }
+       .item-one, .item-two{
+           width: 300px;
+           height: 300px;
+           background-color: blue;
+           margin-bottom: 10px;
+           position: absolute;
+       }
+       .item-one{
+           background-color: red;
+           top: 100px;
+           left: 100px;
+           z-index: 3;
+       }
+    </style>
+    <!-- --text
++ text-align, text-decoration, text-transform, text-indent, text-shadow
++ font-size, font-weight, line-height, font-family, letter-spacing -->
+</head>
+<body>
+    <div class="header"></div>
+    <div class="main">
+        <div class="item-one"></div>
+        <div class="item-two"></div>
+    </div>
+    
+    <!-- <div>
+        <h1>học lập trình không khó quan trọng mọi người có đam mê với nó</h1>
+    </div>
+    <a href="">Click me</a>
+    <ul>
+        <li>học lập trình</li>
+        <li>học lập trình</li>
+        <li>học lập trình</li>
+    </ul>
+    <table border="2">
+        <tr>
+            <td>học lập trình</td>
+            <td>học lập trình</td>
+            <td>học lập trình</td>
+        </tr>
+    </table>
+    <form action="">
+        <input type="text" name="" id="" placeholder="enter your number">
+        <input type="text" name="" id="" placeholder="enter your number">
+    </form> -->
+</body>
+</html>
+

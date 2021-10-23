@@ -1,0 +1,85 @@
+
+
+--text
++ text-align(center, jusstify, right, left), text-decoration(line-through, underline, ..), 
+text-transform(capitalize, lowercase, ippercase)
+, text-indent(chữ sẽ đc thụt vào lề tuỳ vào độ lớn mọi người truyền vào), text-shadow
++ font-size, font-weight, line-height, font-family, letter-spacing
+
+- element
++ a: text-decoration(mặc định nó có gạch dưới)
++ li: list-type-style
++ table: border-collapse
++ input: ::placeholder, caret-color
+
+--đơn vị:
++ %, px, vh(chiều cao 100vh kích thước chiều cao ), vw(chiều rộng của trình duyệt), rem, em
++ % lấy
++ rem: kích thước của nó luôn phụ thuộc vào trình duyệt
++ em: kích thước phụ thuộc vào thằng cha gần nó nhất có thuộc tính font-size
+--posedu-element(phần tử giả)
++ ::before, ::after , first-line, first-letter
+--posedu-class(lớp giả)
++ link, hover(khi mình di con trỏ chuột qua), active, visited
+
+-- css chung
++ border, outline, margin, padding, width, heigtt, background, color, cursor, opacity
+
+-- thuộc tính quan trọng
++ position, flex-box
+
+-- css hiệu ứng
++ animation, transition
+
+
+ /* +text-align: center, left, right */
+        /* div{
+            font-size: 30px;
+        }
+        /* div::before{
+            content: '';
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        } */
+        /*
+        h1{
+            text-align: justify;
+            /* height: 100vh;
+            width: 50vw; */
+            text-decoration: overline; /*gạch giữa*/
+            text-decoration: underline;/* gạch dưới*/
+            text-transform: capitalize;
+            text-indent: 200px;/*thụt dầu dòng*/
+            /* text-shadow: lệnh ngang, lệnh dọc, độ mờ, độ rộng , màu sắc;  bóng của chữ*/
+            text-shadow: 2px 2px 2px red;/*bóng của chữ*/
+            font-size: .5em;/* kích thước của chữ*/
+            font-weight: bold;/*chữ dậm chữ nhạt*/
+            line-height: 2;/*độ cao của mỗi dòng mặc định là 1*/
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;/*phông chữ*/
+            letter-spacing: 5px;/*khoảng cách của mỗi chữ trong từ*/
+            border: 2px solid blue;
+            margin-top: 100px;
+            padding-top: 30px;
+            opacity: 1;
+            cursor: pointer;
+        }
+        h1:hover{
+            color: blue;
+        }
+        
+        a{
+            text-decoration: none;
+        }
+        li{
+            list-style-type: circle;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        input::placeholder{
+            color: red;
+        }
+        input{
+            caret-color: red;
+        } */
