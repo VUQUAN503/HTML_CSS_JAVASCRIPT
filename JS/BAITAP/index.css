@@ -1,0 +1,85 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.menuone{
+    background-color: red;
+    color: white;
+}
+
+.menuone li{
+    border-bottom: 1px solid white;
+    padding: 7px 0;
+    text-align: left;
+    min-width: 200px;
+}
+
+.menutwo{
+    background-color: red;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 200px;
+}
+
+.menutwo li{
+    list-style-type: none;
+}
+
+.dropmenu{
+    position: relative;
+}
+
+.form{
+    background-color: blue;
+    border-radius: 10px;
+    min-height: 170px;
+    min-width: 700px;
+    /* text-align: center; */
+    padding: 20px 20px;
+    margin-right: 50px;
+}
+
+label{
+    color: white;
+    font-size: 18px;
+    min-width: 100px;
+}
+
+.footer{
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.name, .diachi, .gender, .hobbies{
+    margin-bottom: 10px;    
+}
+
+#name, #diachi{
+    min-width: 400px;
+}
+
+.kiemtra{
+    text-align: center;
+}
