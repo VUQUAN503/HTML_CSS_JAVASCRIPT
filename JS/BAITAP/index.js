@@ -18,6 +18,13 @@ dropmenu.onmouseleave = function(){
 
 kiemtra.onclick = function(e){
     e.preventDefault(); // bỏ đi sự kiện mặc định của phần tử
+    fullName.value = chuanHoaTen(fullName.value);
+}
+
+
+// viết hàm chuẩn hoả dữ liệu
+
+function chuanHoaTen(data){
     // fullName.value = '     vu dinh quan';
     // for(let i = 0; i < fullName.value.length; ++i)
     // {
@@ -26,72 +33,28 @@ kiemtra.onclick = function(e){
     //         fullName.value.slice(i, i + 1);
     //     }
     // }
-    fullName.value.trim();// xoá nhữngkhoảng trắng đầu và cuối
+    // console.log(fullName.value.trim());
+    data = data.trim();// xoá nhữngkhoảng trắng đầu và cuối
     // chữ cái đầu tiên mỗi từ phải viết hoa
     // vd  fullName.value = hoc     lap trinh -> Hoc Lap Trinh
-    fullName.value[0].toString().toUpperCase();
-    for(let i = 0; i < fullName.value.length; ++i)
+    for(let i = 0; i < data.length; ++i)
     {
-        if(fullName.value[i] === ' ' && fullName.value[i + 1] !== ' ')
-        {   
-            if(fullName.value[i + 1] >= 'a' && fullName.value[i + 1] <= 'z')
+        if(data[i] === ' ')
+        {
+            if(data[i + 1] === ' ')
             {
-                fullName.value[i + 1] -= 32;
+                data = data.replace(data[i], '');
+                i--;
             }
         }
     }
+    let arr = data.split(' ');
+    for(let i = 0; i < arr.length; ++i)
+    {
+        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+    }
+    return arr.join(' ');
     // mỗi từ chỉ cách nhau duy nhất một khoảng trắng
     // hoc  lap    trinh
-    for(let i = 0; i < fullName.value.length; ++i)
-    {
-        if(fullName.value[i] === ' ')
-        {
-            if(fullName.value[i + 1] === ' ')
-            {
-                fullName.value.replace(fullName.value[i], '');
-            }
-        }
-    }
-}
-
-
-// viết hàm chuẩn hoả dữ liệu
-
-function chuanHoaTen(){
-    // // fullName.value = '     vu dinh quan';
-    // // for(let i = 0; i < fullName.value.length; ++i)
-    // // {
-    // //     if(fullName.value[i] === ' ')
-    // //     {
-    // //         fullName.value.slice(i, i + 1);
-    // //     }
-    // // }
-    // fullName.value.trim();// xoá nhữngkhoảng trắng đầu và cuối
-    // // chữ cái đầu tiên mỗi từ phải viết hoa
-    // // vd  fullName.value = hoc     lap trinh -> Hoc Lap Trinh
-    // fullName.value[0].toString().toUpperCase();
-    // for(let i = 0; i < fullName.value.length; ++i)
-    // {
-    //     if(fullName.value[i] === ' ' && fullName.value[i + 1] !== ' ')
-    //     {   
-    //         if(fullName.value[i + 1] >= 'a' && fullName.value[i + 1] <= 'z')
-    //         {
-    //             fullName.value[i + 1] -= 32;
-    //         }
-    //     }
-    // }
-    // // mỗi từ chỉ cách nhau duy nhất một khoảng trắng
-    // // hoc  lap    trinh
-    // for(let i = 0; i < fullName.value.length; ++i)
-    // {
-    //     if(fullName.value[i] === ' ')
-    //     {
-    //         if(fullName.value[i + 1] === ' ')
-    //         {
-    //             fullName.value.replace(fullName.value[i], '');
-    //         }
-    //     }
-    // }
-    // return fullName.value;// trả về một chuỗi sau khi đc chuẩn hoá
 }
 
