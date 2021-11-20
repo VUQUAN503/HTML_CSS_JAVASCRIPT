@@ -1,0 +1,142 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    padding: 7px 10px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    justify-content: space-between;
+    z-index: 3;
+}
+.header p{
+    letter-spacing: 2.5px;
+    font-size: 20px;
+    padding: 8px 8px;
+}
+
+.header p:hover{
+    background-color: #cccccc;
+}
+
+.header .right{
+    padding: 8px 0;
+}
+
+.header .right a{
+    text-decoration: none;
+    font-size: 20px;
+    padding: 8px 8px;
+    letter-spacing: 2.5px;
+    color: black;
+    margin-left: 10px;
+}
+
+.header .right a:hover{
+    background-color: #cccccc;
+}
+
+.catering{
+    width: 100vw;
+    height: 100vh;
+    background: url('images/hamburger.jpg');
+    background-size: cover;
+}
+
+.about {
+    width: 100%;
+    padding: 70px 25px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: .5px solid #ccc;
+}
+
+.about .about-image{
+    width: 47%;
+    opacity: .7;
+}
+
+.about .about-image img{
+    width: 100%;
+    height: auto;
+}
+
+.about .content{
+    width: 47%;
+    text-align: center;
+}
+
+.about .content h1{
+    letter-spacing: 2.5px;
+    padding: 20px 0;
+    font-size: 40px;
+    margin-bottom: 20px;
+    opacity: .3;
+}
+.about .content p.one{
+    letter-spacing: 2.5px;
+    font-size: 22px;
+    opacity: .3;
+    margin-bottom: 14px;
+}
+
+.about .content p.two{
+    font-size: 22px;
+    opacity: .3;
+    text-align: left;
+    margin-bottom: 14px;
+}
+
+.about .content p.three{
+    font-size: 22px;
+    text-align: left;
+    opacity: .7;
+}
+
+.menu{
+    padding: 100px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: .5px solid #ccc;
+}
+
+.menu .menu-content{
+    width: 47%;
+}
+.menu .menu-image{
+    width: 47%;
+}
+
+.menu .menu-image img{
+    width: 100%;
+    height: auto;
+}
+
+.menu h1{
+    padding: 10px 0;
+    text-align: center;
+    opacity: .3;
+    letter-spacing: 2.5px;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.menu h3{
+    opacity: .3;
+    font-size: 25px;
+    letter-spacing: 2.5px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.menu p{
+    opacity: .7;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
