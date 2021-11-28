@@ -140,3 +140,63 @@
     font-size: 20px;
     margin-bottom: 50px;
 }
+
+.concat {
+    padding: 100px 15px;
+}
+
+.concat h1{
+    letter-spacing: 5px;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.concat p{
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.concat h3{
+    color: #607d8b;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+.concat .form div {
+    margin-bottom: 10px;
+}
+
+.concat .form div input{
+    padding: 20px 10px;
+    width: 100%;
+    font-size: 20px;
+    border: none;
+    border-bottom: .5px solid #ccc;
+}
+
+.btn{
+    padding: 10px 10px;
+    border: none;
+    font-size: 20px;
+}
+
+.btn:hover{
+    background-color: gray;
+}
+
+.fotter{
+    padding: 50px 0;
+    text-align: center;
+    background-color: #ccc;
+}
+
+.fotter p{
+    font-size: 20px;
+}
+.fotter p a{
+    color: black;
+}
+
+.fotter p a:hover{
+    color: aquamarine;
+}

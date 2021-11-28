@@ -1,0 +1,202 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /*
+    100px
+    padding: 20
+    =>140
+    */
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    padding: 5px 10px;
+    align-items: center;
+    z-index: 2;
+    background: white;
+    justify-content: space-between;
+    /*luôn có định theo vị trí của trình duyệt*/
+}
+
+.header a{
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.header a:hover{
+    background-color: #ccc;
+}
+
+.header a.left{
+    font-weight: bold;
+}
+
+.header a.left span{
+    font-weight: normal;
+}
+
+.background{
+    width: 100vw;
+    height: 100vh;
+    background: url('images/architect.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background p{
+    font-size: 50px;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+.background p span{
+    font-weight: normal;
+    color: white;
+}
+
+.background p span:first-child{
+    padding: 7px 7px;
+    background-color: rgba(0, 0, 0, 0.712);
+}
+
+.project{
+    padding: 50px 20px;
+}
+
+.project h1{
+    padding-bottom: 20px;
+    border-bottom: .5px solid #ccc;
+    margin-bottom: 30px;
+}
+
+.project .project-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.project .project-item .image{
+    background: url('images/house2.jpg');
+    width: 23.5%;
+    background-size: cover;
+    height: 250px;
+}
+
+.project .project-item .image span{
+    padding: 10px 20px;
+    display: inline-block;
+    color: white;
+    background-color: black;
+}
+
+.about{
+    padding: 30px 20px;
+}
+.about h1{
+    font-size: 30px;
+    padding-bottom: 20px;
+    border-bottom: .5px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.about p{
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.about .about-three{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about .about-three .about-three-item{
+    width: 23.5%;
+}
+
+.about .about-three .about-three-item img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.about .about-three .about-three-item h3{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.about .about-three .about-three-item .btn{
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    font-size: 20px;
+}
+
+.about .about-three .about-three-item .btn:hover{
+    background-color: gray;
+}
+.concat {
+    padding: 100px 15px;
+}
+
+.concat h1{
+    letter-spacing: 5px;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.concat p{
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.concat h3{
+    color: #607d8b;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+.concat .form div {
+    margin-bottom: 10px;
+}
+
+.concat .form div input{
+    padding: 20px 10px;
+    width: 100%;
+    font-size: 20px;
+    border: none;
+    border-bottom: .5px solid #ccc;
+}
+
+.btn{
+    padding: 10px 10px;
+    border: none;
+    font-size: 20px;
+}
+
+.btn:hover{
+    background-color: gray;
+}
+
+.map{
+    padding: 0 20px;
+}
+
+.map div{
+    background: url('images/map.jpg');
+    background-size: cover;
+    height: 100vh;
+}

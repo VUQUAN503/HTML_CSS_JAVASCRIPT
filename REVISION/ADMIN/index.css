@@ -1,0 +1,77 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu{
+    position: relative;
+    display: flex;
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.menu .togle em{
+    font-size: 30px;
+}
+
+.menu .togle{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: rebeccapurple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: all .5s linear;
+    border-radius: 50%;
+}
+
+
+
+.menu li{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rebeccapurple;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    transform-origin: 150px;
+    left: 0;
+    transition: all .5s linear;
+    transform: rotate(0deg) translateX(130px);
+    transition-delay: calc(.05s * var(--i));
+}
+
+.menu li em{
+    font-size: 30px;
+    color: black;
+}
+
+.menu li:hover{
+    background-color: red !important;
+}
+
+.menu.active .togle{
+    transform: rotate(315deg);
+}
+
+.menu.active li{
+    transform: rotate(calc(360deg/6 * var(--i)));
+}
+
+
