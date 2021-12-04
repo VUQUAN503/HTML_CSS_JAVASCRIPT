@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td colspan="2">QUẢN LÝ THUÊ MÁY TÍNH</td>
+        </tr>
+        <tr>
+            <td><label for="">Số máy</label></td>
+            <td><input autofocus type="text" name="" id="one"></td>
+        </tr>
+        <tr>
+            <td><label for="">Hình thức thuê</label></td>
+            <td><input type="text" name="" id="hinhthucthue"></td>
+        </tr>
+        <tr>
+            <td><label for="">Giờ nhận</label></td>
+            <td><input type="text" name="" id="time"></td>
+        </tr>
+        <tr>
+            <td><label for="">Giờ trả</label></td>
+            <td><input type="text" name="" id="time"></td>
+        </tr>
+        <tr>
+            <td><label for="">Thời gian thuê</label></td>
+            <td><input type="text" name="" id="time"></td>
+        </tr>
+        <tr>
+            <td><label for="">Đơn giá</label></td>
+            <td><input type="text" name="" id="one"></td>
+        </tr>
+        <tr>
+            <td><label for="">Tiền thuê</label></td>
+            <td><input type="text" name="" id="one"></td>
+        </tr>
+        <tr>
+            <td><label for="">Tiền giảm</label></td>
+            <td><input type="text" name="" id="one"></td>
+        </tr>
+        <tr>
+            <td><label for="">Tiền phải trả</label></td>
+            <td><input type="text" name="" id="one"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button>Xóa</button><button class="pay">Tính tiền</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        // kiểm tra trường dữ liệu không đc bỏ trống
+        // lấy ra tất cả thẻ input
+        const input = document.querySelectorAll('input');
+        for (let i = 0; i < input.length; ++i) {
+            // sự kiện đc kích hoạt khi con trỏ chuột rời khỏi ô input
+            input[i].onblur = function () {
+                console.log(input[i].value);
+                // nếu con trỏ chuột rời khỏi mà dữ liệu trống => thông báo
+                if (input[i].value === '') {
+                    input[i].placeholder = 'trường này không đc bỏ trống';
+                    input[i].focus();
+                }
+                else{
+                    if(i == 5){// là ô đơn giá
+                        // lúc này tiền thue => từ hình thức thuê và đơn giá
+                        if(hinhthucthue.value == 'M')
+                        {
+                            input[i + 1].value = 3500;
+                        }
+                        else{
+                            const dongia = parseFloat(input[i].value);
+                            const thoigianthue = parseFloat(input[i - 1].value);
+                            input[i + 1].value = thoigianthue * dongia;
+                        }
+                    }
+                    // trường tính số tiền giảm giá
+                    input[i + 1].focus();
+                }
+            }
+        }
+        const time = document.querySelectorAll('#time');
+        for (let i = 0; i < time.length; ++i) {
+            time[i].onblur = function () {
+                if (time[i].value === '') {
+                    time[i].placeholder = 'trường này không đc bỏ trống';
+                    time[i].focus();
+                }
+                else {
+                    for (let j = 0; j < time[i].value.length; ++j) {
+                        // kiểm tra nếu nó tồn tại chữ hoa hoặc chữ thường
+                        if ((time[i].value[j] >= '0' && time[i].value[j] <= '9')
+                            || time[i].value[j] === '.') {
+                            // làm thế nào để nhận biết đc ô input mình vừ thoát ra là giờ trả
+                            // chỉ số 0 là giờ nhận , chỉ số 1 là giờ trả, chỉ số 2 chính là thời gian thuê
+                            if(i == 1) // giờ trả
+                            {
+                                // tức là input giờ trả vừa blur ra
+                                // => lúc này thời gian thuê bằng giờ trả từ giờ nhậnS
+                                const giotra = parseFloat(time[i].value);// chuyển dữ liệu giờ trả ra số thực
+                                const gionhan = parseFloat(time[i - 1].value);
+                                // => thời gian thuê bằng giờ trả trừ đi giờ nhận
+                                time[i + 1].value = giotra - gionhan;
+                                if(giotra - gionhan > 2)
+                                {
+                                    input[7].value = '20%';
+                                }
+                                else{
+                                    input[7].value = '0%';
+                                }
+                            }
+                            if(i < 2)
+                                time[i + 1].focus();
+                        }
+                        else {
+                            time[i].value = '';
+                            time[i].placeholder = 'dữ liệu không hợp lệ'
+                            time[i].focus();
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        const hinhthucthue = document.querySelector('#hinhthucthue');
+        hinhthucthue.onblur = function () {
+            if (hinhthucthue.value === '') {
+                hinhthucthue.placeholder = 'trường này không đc bỏ trống';
+                hinhthucthue.focus();
+            }
+            else{
+                // nếu có dữ liệu  thì mình kiểm tra tính đúng đắn của nó
+                // ràng buộc chỉ được nhập T M I
+                if(hinhthucthue.value.length > 1)
+                {
+                    hinhthucthue.value = '';
+                    hinhthucthue.placeholder = 'dữ liệu không hợp lệ';
+                    hinhthucthue.focus();
+                }
+                else{
+                    if(hinhthucthue.value === 'T' || hinhthucthue.value === 'M' || hinhthucthue.value === 'I')
+                    {
+                        // xử lý tiền thuê
+                        document.querySelector('#time').focus();
+                    }
+                    else{
+                        hinhthucthue.value = '';
+                        hinhthucthue.placeholder = 'dữ liệu không hợp lệ';
+                        hinhthucthue.focus();
+                    }
+                }
+            }
+        }
+        const pay = document.querySelector('.pay');
+        pay.onclick = function()
+        {
+            // tính tiền
+            const tienthue = parseFloat(input[6].value);
+            // lấy ra giảm giá
+            // 012
+            // 20%
+            const tienphaitra = tienthue - tienthue * (parseInt(input[7].value.substring(0, input[7].value.indexOf('%'))))/100;
+            input[8].value = tienphaitra;
+        }
+        // LÀM NỐT XÓA VÀ RÀNG BUỘC KHI KÍCH TÍNH TIỀN NẾU DỮ LIỆU CHƯA CÓ THÌ SỬ LÝ...
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2">SẮP XẾP THEO QUY LUẬT</td>
+        </tr>
+        <tr>
+            <td><label for="">Nhập câu ban đầu</label></td>
+            <td>
+                <input type="text" name="" id="text">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="">Sau khi nhập lại</label></td>
+            <td>
+                <input type="text" name="" id="a">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button>Xóa</button><button>Viết lại</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        // đếm số lượng từ trong chuỗi đó
+        const text = document.querySelector('#text');
+        text.onblur = function(){
+            if(text.value === '')
+            {
+                text.placeholder = 'vui lòng nhập trường này';
+            }
+            else{
+                // đếm số lượng từ
+                // hoc lập trình
+                const words = text.value.split(' ');
+                // xóa tất cả khoảng trắng đầu và cuối của mỗi từ(trim)
+                console.log(words);
+                if(words.length > 20)
+                {
+                    text.value = '';
+                    text.placeholder = 'dữ liệu quá 20 từ';
+                }
+                else{
+                    // kiểm tra từng từ một trong câu đó có từ nào lớn hơn 10 ký tự không
+                    let check = true;
+                    for(let i = 0; i < words.length; ++i)
+                    {
+                        if(words[i].length > 10)
+                        {
+                            text.value = '';
+                            text.placeholder = 'đã có từ trong câu lớn hơn 10 ký tự';
+                            check = false;
+                            break;
+                        }
+                    }
+                    if(check == true)
+                    {
+                        // nếu check true => sắp xếp
+                        for(let i = 0; i < words.length - 1; ++i)
+                        {
+                            for(let j = i + 1; j < words.length; ++j)
+                            {
+                                if(words[i].localeCompare(words[j]) == 1)
+                                {
+                                    let tem = words[i];
+                                    words[i] = words[j];
+                                    words[j] = tem;
+                                }
+                            }
+                        }
+                        document.querySelector('#a').value = words.join(' ');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
