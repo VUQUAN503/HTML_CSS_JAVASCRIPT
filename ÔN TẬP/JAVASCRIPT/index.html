@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p style="border: 1px solid red;height: 100px;" class="ketqua"></p>
+    <div>
+        <button class="num">1</button><button class="num">2</button><button class="num">3</button><button class="num">4</button><button class="num">5</button><button class="num">+</button>
+    </div>
+    <div>
+        <button class="num">6</button><button class="num">7</button><button class="num">8</button><button class="num">9</button><button class="num">9</button><button class="equal">=</button>
+    </div>
+    <script>
+        // lấy tất cả thẻ button với class num
+        let result = '';
+        var number = document.querySelectorAll('.num');
+        for(var i = 0; i < number.length; ++i)
+        {
+            number[i].addEventListener('click', function(){
+                result += this.innerText;
+                document.querySelector('.ketqua').innerText = result;
+            })
+        }
+
+        document.querySelector('.equal').onclick = function()
+        {
+            if(result != '')
+            {
+                const a = parseInt(result.substring(0, result.indexOf('+')));
+                const b = parseInt(result.substring(result.indexOf('+')));
+                document.querySelector('.ketqua').innerText = a + b;
+                result = '';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

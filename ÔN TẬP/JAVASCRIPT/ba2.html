@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="text" placeholder="write your number here">
+    <input class="submit" type="submit" name="" id="">
+    <p></p>
+    <script>
+        // nhập một số từ một đến 10
+        let check = document.querySelector('.submit');
+        check.onclick = function()
+        {
+            // lấy dữ liệu ô input
+            let data = document.querySelector('#text').value;
+            var a = true;
+            for(let i = 0; i < data.length; ++i)
+            {
+                if(data[i] >= 'a' && data[i] <= 'z' || data[i] >= 'A' && data[i] <= 'Z')
+                {
+                    a = false;
+                    break;
+                }
+            }
+            if(a)
+            {
+                if(parseInt(data) < 1 || parseInt(data) > 10)
+                {
+                    document.querySelector('p').innerText = 'dữ liệu không hợp lệ'
+                }
+                else{
+                    document.querySelector('p').innerText = 'dữ liệu hợp lệ'
+                }
+            }
+            else{
+                document.querySelector('p').innerText = 'dữ liệu không hợp lệ'
+            }
+        }
+    </script>
+</body>
+</html>

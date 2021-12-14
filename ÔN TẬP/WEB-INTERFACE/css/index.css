@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div.header{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    position: fixed;
+}
+
+div.header .header-left a, .header-right a{
+    display: inline-block;
+    padding: 20px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+div.header .header-left a:hover, .header-right a:hover{
+    background-color: #ccc;
+    color: rgba(0, 0, 0, 0.822);
+}
+
+div.header .header-left span{
+    display: inline-block;
+    position: relative;
+}
+
+div.header .header-left .dropdown{
+    position: absolute;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    top: 100%;
+    left: 0%;
+}
+
+div.header .dropdown a{
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+}
+
+div.header .dropdown a:hover{
+    background-color: #ccc;
+    color: rgba(0, 0, 0, 0.822);
+}
+
+
+.a-dropdown::before{
+    content: '';
+    position: absolute;
+    border-bottom: 4px solid white;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    left: 85%;
+    border-top: 4px solid transparent;
+    border-left: 4px solid transparent;
+    z-index: 100;
+    border-right: 4px solid white;
+}
+
+div.header .header-left span:hover  div.dropdown{
+    display: flex;
+}
+div.header .header-left span:hover a.a-dropdown{
+    background-color: #ccc;
+    color: rgba(0, 0, 0, 0.822);
+}
